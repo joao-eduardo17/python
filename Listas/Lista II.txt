@@ -1,0 +1,84 @@
+a = float(input("Insira as medidas: "))
+b = float(input(""))
+c = float(input(""))
+if a>b+c or b>a+c or c>a+b:
+    print("Não é um triângulo")
+else:
+    print("É um triângulo")
+    if a==b==c:
+        print("Equilátero")
+    elif a==b or a==c or b==c:
+        print("Isóceles")
+    else:
+        print("Escaleno")
+
+
+ano = int(input("Digite o ano: "))
+if (ano%4==0 and ano%100!=0) or (ano%400==0):
+    print("O ano é bissexto")
+else:
+    print("O ano não é bissexto")
+
+
+p = float(input("Qual o peso dos peixes pescados? "))
+e = p-50
+m = e*4.00
+if p>50:
+    print(f"O excesso foi de {e} kg e o valor da multa é de R$ {m:.2f}")
+else:
+    print("O excesso foi de ZERO kg e o valor da multa é de ZERO reais")
+
+
+a = float(input("Digite três números: "))
+b = float(input(""))
+c = float(input(""))
+if a>b and a>c:
+    print("O primeiro valor é maior")
+elif b>a and b>c:
+    print("O segundo valor é maior")
+elif c>a and c>b:
+    print("O terceiro valor é maior")
+else:
+    print("Os valores são iguais")
+
+
+a = float(input("Digite três números: "))
+b = float(input(""))
+c = float(input(""))
+if a>b and a>c and b<c:
+    print("O primeiro valor é maior e o segundo valor é menor")
+elif a>b and a>c and c<b:
+    print("O primeiro valor é maior e o terceiro valor é menor")
+elif b>a and b>c and a<c:
+    print("O segundo valor é maior e o primeiro valor é menor")
+elif b>a and b>c and c<a:
+    print("O segundo valor é maior e o terceiro valor é menor")
+elif c>a and c>b and a<b:
+    print("O terceiro valor é maior e o primeiro valor é menor")
+elif c>a and c>b and b<a:
+    print("O terceiro valor é maior e o segundo valor é menor")
+elif a==b==c:
+    print("Os três números são iguais")
+
+
+s = float(input("O valor que você ganha por hora: "))
+h = int(input("Total de horas que você trabalha por mês: "))
+sb = s*h
+ir = sb*0.11
+inss = sb*0.08
+sdct = sb*0.05
+sl = sb-ir-inss-sdct
+print(f"O Salário bruto é de R${sb:.2f}")
+print(f"O Imposto de renda é de R${ir:.2f}")
+print(f"O INSS é de R${inss:.2f}")
+print(f"O Sindicato é de R${sdct:.2f}")
+print(f"O Salário líquido é de R${sl:.2f}")
+
+
+m = int(input("Informe os metros quadrados a serem pintados: "))
+p = m/54
+l = int(m/54)+1
+if m%54==0:
+    print(f"Irá precisar de {m/54:.0f} latas de tinta e irá pagar R${80*p:.2f}")
+else:
+    print(f"Irá precisar de {(m/54)+1:.0f} latas de tinta e irá pagar R${(80*l):.2f}")

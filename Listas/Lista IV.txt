@@ -1,0 +1,68 @@
+1-
+import random
+n = random.sample(range(100), 10)
+maior = 0
+menor = 100
+for c in n:
+    if maior < c:
+        maior = c
+    elif menor > c:
+        menor = c
+print(f'O maior é {maior}')
+print(f'O menor é {menor}')
+---------------------------------------
+2-
+import random
+n = random.sample(range(100),20)
+k = 0
+par = []
+impar = []
+while k < 20:
+    if n[k]%2 == 0:
+        par.append(n[k])
+    else:
+        impar.append(n[k])
+    k+=1
+print('Lista', n)
+print('Lista par', par)
+print('Lista ímpar', impar)
+------------------------------------
+3-
+import random
+l1 = random.sample(range(100),10)
+l2 = random.sample(range(100),10)
+k = 0
+v = []
+while k < 10:
+    v.append(l1[k])
+    v.append(l2[k])
+    k+= 1
+print('Lista 1', l1)
+print('Lista 2', l2)
+print('Vetor', v)
+------------------------------------------------------------------------------------------------------------------------------------
+4-
+n = '''The Python Software Foundation and the global Python community welcome and encourage participation by everyone.
+Our community is based on mutual respect, tolerance, and encouragement,
+and we are working to help each other live up to these principles. We want our community to be more diverse: whoever you are,
+and whatever your background, we welcome you.'''.lower().replace('.','').replace(':','').replace(',','').split(' ')
+k = 0
+p = []
+while k < len(n):
+    if n[k][0] in 'python' or n[k][-1] in 'python':
+        p.append(n[k])
+    k+= 1
+print(p)
+-----------------------------------------------------------------------------------------------------------------------------------
+5-
+n = '''The Python Software Foundation and the global Python community welcome and encourage participation by everyone.
+Our community is based on mutual respect, tolerance, and encouragement,
+and we are working to help each other live up to these principles. We want our community to be more diverse: whoever you are,
+and whatever your background, we welcome you.'''.lower().replace('.','').replace(':','').replace(',','').split(' ')
+k = 0
+p = []
+while k < len(n):
+    if n[k][0] in 'python' and len(n[k]) > 4 or n[k][-1] in 'python' and len(n[k]) > 4:
+        p.append(n[k])
+    k+= 1
+print(p)

@@ -1,0 +1,62 @@
+N1 = int(input("Digite um número inteiro: "))
+N2 = int(input("Digite outro número inteiro: "))
+Soma = N1 + N2
+print ("A soma é:", Soma)
+
+M = float(input("Digite uma distância em metros: "))
+MM = M / 1000
+print ("A distância em mm é:", MM)
+
+T1 = int(input("Dias: "))
+T2 = int(input("Horas: "))
+T3 = int(input("Minutos: "))
+T4 = int(input("Segundos: "))
+S1 = T1 * 86400
+S2 = T2 * 3600
+S3 = T3 * 60
+ST = S1 + S2 + S3 + T4
+print ("Este tempo em segundos é:", ST)
+
+Sal = float(input("Salário: "))
+Porcent = float(input("Porcentagem do aumento: "))
+S1 = Porcent / 100
+S2 = Sal * S1
+S3 = Sal + S2
+print ("O aumento foi de R$", S2,", e o novo salário é de R$",S3)
+
+Preço = float(input("Preço da mercadoria: "))
+Desconto = float(input("Porcentagem de desconto: "))
+S1 = Desconto / 100
+S2 = Preço * S1
+S3 = Preço - S2
+print("O valor do desconto foi de R$", S2, ", e o valor total do produto é de R$", S3)
+
+D = float(input("A distância em km: "))
+V = float(input("A velocidade média: "))
+S = D / V
+print ("O tempo da viagem durou", S,"horas")
+
+C = float(input("Digite uma temperatura em °C: "))
+F = 9 * C / 5 + 32
+print ("A temperatura convertida em °F é de", F)
+
+F = float(input("Digite uma temperatura em °F: "))
+C = (F - 32) * 5/9
+print ("A temperatura convertida em °C é de", C)
+
+KM = float(input("A quantidade de km percorridos com um carro alugado: "))
+Dias = int(input("A quantidade de dias que o carro foi alugado: "))
+S1 = KM * 0.15
+S2 = Dias * 60
+ST = S1 + S2
+print ("O valor total é de R$", ST)
+
+TCD = int(input("A quantidade de cigarros fumados por dia: "))
+AF = int(input("Por quantos anos: "))
+T1 = AF * 365
+T2 = TCD * T1
+T3 = T2 / 144
+print ("O fumante perdeu", T3, "dias de vida")
+
+a = (len(str(2 ** 1000000)))
+print (a)
