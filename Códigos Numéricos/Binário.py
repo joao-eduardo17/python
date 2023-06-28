@@ -2,7 +2,7 @@
 def binario(n):
     r = ''
     if n == 0:
-        return str(n)
+        return n
     while n > 1:
         r = r + str(n%2)
         n = n//2
