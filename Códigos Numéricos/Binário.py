@@ -8,6 +8,8 @@ def binario(n):
         n = n//2
     return int('1' + r[::-1])
 
+#--------------------------------------
+
 #Binário para decimal
 def decimal(n):
     tamanho = len(str(n))-1

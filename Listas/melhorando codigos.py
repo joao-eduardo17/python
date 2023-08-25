@@ -1,3 +1,5 @@
+#Lista I
+
 def soma(n1,n2):
     return n1+n2
 
@@ -30,3 +32,17 @@ def cigarros(c,a):
 
 def elevado():
     return len(str(2**100))
+###################################################################
+#Lista 2
+
+def triangulo(a,b,c):
+    if a>b+c or b>a+c or c>a+b: return 'Não é um triângulo'
+    if a==b==c: return 'Equilátero'
+    if a==b or a==c or b==c: return 'Isóceles'
+    else: return 'Escaleno'
+
+def bissexto(x):
+    if x%4==0 and x%100!=0 or x%400==0: return 'Bissexto'
+    return 'Não é bissexto'
+
+def 
