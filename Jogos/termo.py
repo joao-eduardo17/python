@@ -64,7 +64,6 @@ def verifica_acerto(chute, termo, letras):
         for k in termo:
             if c == k and index_chute == index_termo:
                 letras[index_chute] = c
-                print(letras)
             index_termo += 1
 
 
@@ -72,7 +71,7 @@ def verifica_cor():
     import colorama
     acerto, erro, letra_certa = (colorama.Fore.GREEN), (colorama.Fore.BLACK), (colorama.Fore.YELLOW)
     print(acerto + 'opaopaopa' + erro + 'oas' + letra_certa + 'dhsk')
-    return
+    print(colorama.Style.RESET_ALL)
 
 
 
