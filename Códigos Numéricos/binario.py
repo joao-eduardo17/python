@@ -8,7 +8,7 @@ def binario(n):
         n = n//2
     return int('1' + r[::-1])
 
-#--------------------------------------
+################################
 
 #Binário para decimal
 def decimal(n):
@@ -17,5 +17,5 @@ def decimal(n):
     for c in str(n):
         if c == '1':
             r = r + (2**tamanho)
-        tamanho = tamanho - 1
+        tamanho =- 1
     return r
