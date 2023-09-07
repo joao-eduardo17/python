@@ -11,9 +11,9 @@ def binário(n):
 #Decimal para octal
 def octal(n):
     resultado = ''
-    if n <= 8:
+    if n < 8:
         return n
-    while n > 8:
+    while n >= 8:
         resultado += str(n%8)
         n = n//8
     x = str(n) + str(resultado[::-1])
