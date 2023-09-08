@@ -1,5 +1,5 @@
 #Decimal para binário
-def binário(n):
+def binario(n):
     resultado = ''
     if n == 0:
         return n
@@ -33,7 +33,7 @@ def hexa(n):
                 print(letras[c])
                 return
             index += 1
-    while n > 15:
+    while n >= 16:
         x = n % 16
         if x > 9:
             index = 10
