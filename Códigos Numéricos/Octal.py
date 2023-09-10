@@ -1,6 +1,14 @@
 #Octal para binário
 def binario(n):
-    return
+    n = str(n)
+    resultado = ''
+    numeros = '000 001 010 011 100 101 110 111'.split()
+    for c in n:
+        for contador in range(len(numeros)):
+            if c == str(contador):
+                resultado += numeros[contador]
+                break
+    return int(resultado)
 
 #Octal para decimal
 def decimal(n):
@@ -13,4 +21,4 @@ def decimal(n):
 
 #Octal para Hexadecimal
 def hexa(n):
-    return
+    
