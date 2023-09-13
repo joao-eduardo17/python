@@ -23,7 +23,7 @@ def binario(n):
             if confirma:
                 break
             index +=1
-    return resultado
+    return int(resultado)
 
 #Hexadecimal para octal
 def octal(n):
