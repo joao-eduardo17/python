@@ -17,26 +17,25 @@ def ordem_senha(tamanho_senha):
     tamanho_letra, tamanho_numero, tamanho_caracter = 0, 0, 0
     match (1-1): #(random.randint(0,2)):
         case 0:
-            while tamanho > 0:
-                if tamanho < 1:
-                    break
-                tamanho_letra += random.randint(1,tamanho)
-                tamanho -= tamanho_letra
-                if tamanho < 1:
-                    break
-                tamanho_numero += random.randint(1, tamanho)
-                tamanho -= tamanho_numero
-                if tamanho < 1:
-                    break
-                tamanho_caracter += random.randint(1,tamanho)
-                tamanho -= tamanho_caracter
+            tamanho_letra = tamanho//2
+            tamanho = tamanho // 2
+            tamanho_numero = tamanho // 2
+            tamanho = tamanho // 2
+            tamanho_caracter = tamanho
+            while tamanho_numero + tamanho_caracter + tamanho_letra != tamanho_senha:
+                x = random.randint(0,3)
+
+            print(tamanho)
+            print(tamanho_letra)
+            print(tamanho_caracter)
+            print(tamanho_numero)
+
 
         case 1:
             return
 
         case 2:
             return
-    print(tamanho)
 
 
 if __name__ == '__main__':
