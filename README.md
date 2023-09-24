@@ -6,7 +6,7 @@ Códigos que eu aprendi em python :)
 
 |Projetos|Status|
 |--------|------|
-|Criptografias| Não iniciado|
+|Criptografias| Em andamento|
 |Códigos Numéricos| Finalizado|
 |Gerador de Senhas| Em andamento|
 |Jogos| Em andamento|
@@ -31,5 +31,5 @@ Códigos que eu aprendi em python :)
 <br>
 
 ### Listas:
-<p>Uma pasta que contém arquivos de listas feitas por mim, sendo elas as listas do professor Fernando Masanori e as listas do Codingbat.com</p>
+<p>Uma pasta que contém arquivos de listas feitas por mim, sendo elas as listas do professor Fernando Masanori e as listas do codingbat.com</p>
 
