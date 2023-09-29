@@ -3,8 +3,10 @@ def gerador_de_senhas():
     print('Escolha o número de dígitos da sua senha')
     tamanho_senha = int(input('Digite aqui: '))
     senha = ''
+    print('Escolha qual o tipo predominante da sua senha')
+    print('1 - Letras\n2 - Números\n3 - Caracteres')
+    tipo_predominante = int(input('Digite aqui: '))
     ordem_senha(tamanho_senha)
-
 
 ######################################
 
@@ -17,23 +19,9 @@ def ordem_senha(tamanho_senha):
     tamanho_letra, tamanho_numero, tamanho_caracter = 0, 0, 0
     match (1-1): #(random.randint(0,2)):
         case 0:
-            tamanho_letra = tamanho//2
-            tamanho = tamanho // 2
-            tamanho_numero = tamanho // 2
-            tamanho = tamanho // 2
-            tamanho_caracter = tamanho
-            while tamanho_numero + tamanho_caracter + tamanho_letra != tamanho_senha:
-                x = random.randint(0,3)
-
-            print(tamanho)
-            print(tamanho_letra)
-            print(tamanho_caracter)
-            print(tamanho_numero)
-
-
+            return
         case 1:
             return
-
         case 2:
             return
 

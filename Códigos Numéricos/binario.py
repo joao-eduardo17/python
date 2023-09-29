@@ -57,7 +57,3 @@ def hexa(n):
                 break
             contador += 1
     return resultado
-                    
-        
-   
-    

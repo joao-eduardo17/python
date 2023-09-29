@@ -22,7 +22,7 @@ def jogar():
             break
         else:
             verifica_acerto(chute, termo, letras)
-            verifica_cor()
+            verifica_cor(chute, termo)
             tentativas -= 1
             if tentativas == 1:
                 print(f'Você tem {tentativas} tentativa')
@@ -67,12 +67,15 @@ def verifica_acerto(chute, termo, letras):
             index_termo += 1
 
 
-def verifica_cor():
+def verifica_cor(chute, termo):
     import colorama
+    for c in chute:
+        for k in termo:
+            if c == k:
+                return
     acerto, erro, letra_certa = (colorama.Fore.GREEN), (colorama.Fore.BLACK), (colorama.Fore.YELLOW)
     print(acerto + 'opaopaopa' + erro + 'oas' + letra_certa + 'dhsk')
     print(colorama.Style.RESET_ALL)
-
 
 
 if __name__ == '__main__':
