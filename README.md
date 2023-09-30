@@ -1,19 +1,20 @@
 # Python
 Códigos que eu aprendi em python :)
 
----
-##  Status de projetos
+
+## 🏁 Status de projetos
 
 |Projetos|Status|
 |--------|------|
-|Criptografias| Em andamento|
-|Códigos Numéricos| Finalizado|
-|Gerador de Senhas| Em andamento|
-|Jogos| Em andamento|
-|Listas| Em andamento|
+|Criptografias|⌚ Em andamento|
+|Códigos Numéricos|✔️ Finalizado|
+|Gerador de Senhas|⌚ Em andamento|
+|Jogos|⌚ Em andamento|
+|Listas|⌚ Em andamento|
+|Mini Desafios|⌚ Em andamento|
 
----
-## Descrição dos projetos
+
+## 📝 Descrição dos projetos
 ### Criptografias:
 <p>A criptografia é a prática de proteger informações por meio do uso de algoritmos codificados, hashes e assinaturas. Neste programa, serão utilizadas as criptografias Cifra de César e Vigenère.</p>
 <br>
@@ -32,4 +33,12 @@ Códigos que eu aprendi em python :)
 
 ### Listas:
 <p>Uma pasta que contém arquivos de listas feitas por mim, sendo elas as listas do professor Fernando Masanori e as listas do codingbat.com</p>
+<br>
 
+### Mini Desafios:
+<p>Uma pasta que contém vários arquivos com alguns desafios, sendo eles:</p>
+
+- **Loop Infinito:** Um loop infinito sem pausa.
+- **Loop com Break:** Um loop infinito que pausa assim que uma condição específica é atendida.
+- **Rolagem de dados:** Uma rolagem de dados em que o usuário escolhe quantos dados ele irá rolar, além de escolher se irá somar o valor dos dados.
+- **Pedra, papel ou tesoura:** Um jogo simples feito para o usuário jogar contra a aleatorização do Python.
