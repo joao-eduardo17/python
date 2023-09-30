@@ -17,7 +17,7 @@ def rola_dado():
             case "y":
                 print(f"A soma dos dados é {soma_dados}")
             case "n":
-                print("Ok babaca!")
+                print("Ok!")
 
 if __name__ == '__main__':
     rola_dado()
