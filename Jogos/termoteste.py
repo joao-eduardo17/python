@@ -22,7 +22,7 @@ def jogar():
             break
         else:
             verifica_acerto(chute, termo, letras)
-            verifica_cor()
+            verifica_cor(chute)
             tentativas -= 1
             if tentativas == 1:
                 print(f'Você tem {tentativas} tentativa')
@@ -46,7 +46,8 @@ def sortear_palavra():
             palavras.append(p)
         aleatorio = random.sample(palavras, 1)
         termo = ''
-        for c in aleatorio: termo += c
+        for c in aleatorio:
+            termo += c
         return termo
 
 
@@ -68,11 +69,16 @@ def verifica_acerto(chute, termo, letras):
             index_termo += 1
 
 
-def verifica_cor():
+def verifica_cor(chute):
     import colorama
-    acerto, erro, letra_certa = (colorama.Fore.GREEN), (colorama.Fore.BLACK), (colorama.Fore.YELLOW)
-    print(acerto + 'opaopaopa' + erro + 'oas' + letra_certa + 'dhsk')
-    print(colorama.Style.RESET_ALL)
+    chute_colorido = ""
+    acerto, erro, letra_certa, reset = colorama.Fore.GREEN, colorama.Fore.BLACK, colorama.Fore.YELLOW, colorama.Style.RESET_ALL
+    for c in chute:
+        if c == "c":
+            chute_colorido += (acerto + c)
+        if c == "v":
+            chute_colorido += (letra_certa + c)
+    print(chute_colorido + reset)
 
 
 if __name__ == '__main__':
