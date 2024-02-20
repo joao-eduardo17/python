@@ -19,9 +19,9 @@ def cria_classe(escolha):
 
     match escolha:
         case 1:
-            personagem = Classe(15, 2, 4)
+            personagem = Classe(10, 2, 4)
         case 2:
-            personagem = Classe(10, 5, 2)
+            personagem = Classe(15, 5, 2)
         case 3:
             personagem = Classe(10, 2, 6)
     return personagem

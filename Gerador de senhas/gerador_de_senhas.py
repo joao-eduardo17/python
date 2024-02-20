@@ -2,7 +2,6 @@ def gerador_de_senhas():
     print('* Bem-Vindo ao Gerador de Senhas! *')
     print('Escolha o número de dígitos da sua senha')
     tamanho_senha = int(input('Digite aqui: '))
-    senha = ''
     print('Escolha qual o tipo predominante da sua senha')
     print('1 - Letras\n2 - Números\n3 - Caracteres')
     tipo_predominante = int(input('Digite aqui: '))

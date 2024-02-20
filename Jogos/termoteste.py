@@ -12,6 +12,7 @@ def jogar():
         print(letras_certas)
         print(f'Chute uma palavra de {len(termo)} letras')
         chute = input('Digite a palavra: ')
+        chute = chute.lower()
         while len(chute) != len(termo):
             print('*************************************************')
             print(f'A palavra tem que possuir exatamente {len(termo)} letras!')
@@ -22,7 +23,7 @@ def jogar():
             break
         else:
             verifica_acerto(chute, termo, letras)
-            verifica_cor(chute)
+            verifica_cor(chute, termo)
             tentativas -= 1
             if tentativas == 1:
                 print(f'Você tem {tentativas} tentativa')
@@ -69,15 +70,18 @@ def verifica_acerto(chute, termo, letras):
             index_termo += 1
 
 
-def verifica_cor(chute):
+def verifica_cor(chute, palavra):
     import colorama
     chute_colorido = ""
-    acerto, erro, letra_certa, reset = colorama.Fore.GREEN, colorama.Fore.BLACK, colorama.Fore.YELLOW, colorama.Style.RESET_ALL
+    acerto, erro, letra_certa, reset = (colorama.Fore.GREEN, colorama.Fore.BLACK, colorama.Fore.YELLOW,
+                                        colorama.Style.RESET_ALL)
+
     for c in chute:
-        if c == "c":
+        contador = 0
+        if c not in palavra:
+            chute_colorido += (erro + c)
+        else:
             chute_colorido += (acerto + c)
-        if c == "v":
-            chute_colorido += (letra_certa + c)
     print(chute_colorido + reset)
 
 
