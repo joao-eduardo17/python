@@ -35,11 +35,3 @@ Códigos que eu aprendi em python :)
 <p>Uma pasta que contém arquivos de listas feitas por mim, sendo elas as listas do professor Fernando Masanori e as listas do codingbat.com</p>
 <br>
 
-### 📍Mini Desafios:
-<p>Uma pasta que contém vários arquivos com alguns desafios, sendo eles:</p>
-
-- **Loop Infinito:** Um loop infinito sem pausa.
-- **Loop com Break:** Um loop infinito que pausa assim que uma condição específica é atendida.
-- **Rolagem de dados:** Uma rolagem de dados em que o usuário escolhe quantos dados ele irá rolar, além de escolher se irá somar o valor dos dados.
-- **Pedra, papel ou tesoura:** Um jogo simples feito para o usuário jogar contra a aleatorização do Python.
-- **Média, moda e mediana:** Um programa que fornece 3 opções para calcular os números fornecidos pelo usuário.
