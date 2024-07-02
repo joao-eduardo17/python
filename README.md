@@ -128,9 +128,9 @@ def principal():
 # RESTO DO CÓDIGO #
 ~~~
 
-Agora no html, o `input` deve estar dentro de um `form` com um `action=`, em que seu valor deve estar entre aspas e duas chaves, que dentro deve ter escrito a função `url_for()` para o html saber para onde o método será mandado, no caso é função `principal`, que deve estar entre aspas. Após isso, ainda na tag `form`, deve-se colocar o parâmetro `method=` que deverá ser preenchida com o `"POST"`.
+Agora no html, o `input` deve estar dentro de um `form` com um `action`, em que seu valor deve estar entre aspas e duas chaves, que dentro deve ter escrito a função `url_for()` para o html saber para onde o método será mandado, no caso é função `principal`, que deve estar entre aspas. Após isso, ainda na tag `form`, deve-se colocar a propriedade `method=` que deverá ser preenchida com o `"POST"`.
 
-No input deve-se definir o nome para ser utilizado pelo Flask para referenciar a tag.
+No input deve-se definir o nome utilizando a propriedade `name=` para ser utilizado pelo Flask para referenciar a tag.
 ~~~html
 <body>
     <form action="{{url_for('principal')}}" method="POST">
@@ -138,4 +138,41 @@ No input deve-se definir o nome para ser utilizado pelo Flask para referenciar a
         <button>Adicionar</button>
     </form>
 </body>
+~~~
+
+## Herança de páginas utilizando Jinja
+No Jinja, existe heranças de páginas html. Para utilizar, crie um arquivo html base e, dentro dele deverá ter:
+~~~html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppPython</title>
+</head>
+<body>
+    {% block conteudo %}
+    {% endblock conteudo %}
+</body>
+</html>
+~~~
+
+Estes blocos são para herdar toda a página html, servindo para economizar código:
+~~~html
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1>LISTA DE FRUTAS</h1>
+<hr>
+<ol>
+    {% for c in frutas %}
+    <li>{{c}}</li>
+    {% endfor %}
+</ol>
+
+<form action="{{url_for('principal')}}" method="POST">
+    <input type="text" name="fruta" placeholder="fruta">
+    <button>Adicionar</button>
+</form>
+{% endblock conteudo %}
 ~~~
