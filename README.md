@@ -51,9 +51,9 @@ A URL padrão do flask é `http://127.0.0.1:5000`
 O flask possui algumas funções importantes para serem utilizadas tais quais são necessárias para renderizar páginas html e utilizar funções no banco de dados.
 
 ### render_template
-Uma função muito utilizada é o `render_template`, que é utilizado para renderizar páginas html
+Uma função muito utilizada é o `render_template`, que é utilizado para renderizar páginas html.
 
-A página html deve estar em uma pasta chamada `templates` para ser renderizada pelo flask
+A página html deve estar em uma pasta chamada `templates` para ser renderizada pelo flask.
 ~~~python
 # Importa o render_template junto ao flask
 from flask import Flask, render_template
@@ -64,3 +64,41 @@ app = Flask(__name__)
 def principal():
   return render_template("index.html") # No retorno, deve ser posto o nome do arquivo html
 ~~~
+
+
+### Utilizar variáveis do Python no HTML
+Uma variável do Python pode ser inserida dentro da função que retorna a página html:
+~~~python
+# RESTO DO CÓDIGO #
+@app.route('/')
+def principal():
+  n1 = 1
+  n2 = 2
+  return render_template("index.html", n1=n1, n2=n2) # Inserindo as variáveis no html
+~~~
+E no html, essas variáveis podem ser chamadas por meio de `{{variavel}}`.
+~~~html
+<body>
+  1+2 = {{n1+n2}}
+</body>
+~~~
+
+### Loops com for utilizando Jinja
+Existe como utilizar loops no html utilizando o Jinja. Inserindo uma lista por exemplo, pode-se percorre-la utilizando o `for`.
+~~~python
+# RESTO DO CÓDIGO #
+@app.route('/')
+def principal():
+  lista = [1,2,3]
+  return render_template("index.html", lista=lista)
+~~~
+para usar um laço de repetição, utilize o `{% for algo em algumaCoisa %}` e ao fim, colocar `{% endfor %}`.
+~~~html
+<body>
+    {% for numeros in lista %}
+        <li>{{numeros}}</li>
+    {% endfor %}
+</body>
+~~~
+
+
