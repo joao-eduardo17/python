@@ -47,10 +47,10 @@ A URL padrão do flask é `http://127.0.0.1:5000`
 
 <hr>
 
-## Funções importantes do Flask
+# Funções importantes do Flask
 O flask possui algumas funções importantes para serem utilizadas tais quais são necessárias para renderizar páginas html e utilizar funções no banco de dados.
 
-### render_template
+## render_template
 Uma função muito utilizada é o `render_template`, que é utilizado para renderizar páginas html.
 
 A página html deve estar em uma pasta chamada `templates` para ser renderizada pelo flask.
@@ -66,7 +66,7 @@ def principal():
 ~~~
 
 
-### Utilizar variáveis do Python no HTML
+## Utilizar variáveis do Python no HTML
 Uma variável do Python pode ser inserida dentro da função que retorna a página html:
 ~~~python
 # RESTO DO CÓDIGO #
@@ -83,7 +83,7 @@ E no html, essas variáveis podem ser chamadas por meio de `{{variavel}}`.
 </body>
 ~~~
 
-### Loops com for utilizando Jinja
+## Loops com for utilizando Jinja
 Existe como utilizar loops no html utilizando o Jinja. Inserindo uma lista por exemplo, pode-se percorre-la utilizando o `for`.
 ~~~python
 # RESTO DO CÓDIGO #
