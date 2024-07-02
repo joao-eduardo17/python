@@ -92,7 +92,7 @@ def principal():
   lista = [1,2,3]
   return render_template("index.html", lista=lista)
 ~~~
-para usar um laço de repetição, utilize o `{% for algo em algumaCoisa %}` e ao fim, colocar `{% endfor %}`.
+Para usar um laço de repetição, utilize o `{% for algo em algumaCoisa %}` e ao fim, colocar `{% endfor %}`.
 ~~~html
 <body>
     {% for numeros in lista %}
@@ -100,5 +100,42 @@ para usar um laço de repetição, utilize o `{% for algo em algumaCoisa %}` e a
     {% endfor %}
 </body>
 ~~~
+Para usar dicionários é quase a mesma coisa, apenas mudar de lista para dicionário e no html usar a seguinte sintaxe:
+~~~html
+<body>
+    {% for chave, valor in dicionario.items() %}
+        <li>{{chave}} - {{valor}}</li>
+    {% endfor %}
+</body>
+~~~
 
+## Módulo request
+O módulo request é um módulo que permite requisições do servidor através dos métodos `GET` e `POST`. O método `POST` manda os dados para o servidor, já o `GET` o requisita.
+~~~python
+# Importa o request junto ao flask e o render_template
+from flask import Flask, render_template, request
 
+# RESTO DO CÓDIGO #
+frutas = []
+
+@app.route('/', methods=["GET", "POST"])
+def principal():
+    if request.method == "POST": # Se o método de requisição for o método POST
+        if request.form.get("fruta"): # Se a requisição do formulário html não estiver vazia (fruta é o name do input no html)
+            frutas.append(request.form.get("fruta")) # Adiciona a fruta na lista de frutas
+    return render_template("index.html", frutas=frutas)
+
+# RESTO DO CÓDIGO #
+~~~
+
+Agora no html, o `input` deve estar dentro de um `form` com um `action=`, em que seu valor deve estar entre aspas e duas chaves, que dentro deve ter escrito a função `url_for()` para o html saber para onde o método será mandado, no caso é função `principal`, que deve estar entre aspas. Após isso, ainda na tag `form`, deve-se colocar o parâmetro `method=` que deverá ser preenchida com o `"POST"`.
+
+No input deve-se definir o nome para ser utilizado pelo Flask para referenciar a tag.
+~~~html
+<body>
+    <form action="{{url_for('principal')}}" method="POST">
+        <input type="text" name="fruta" placeholder="fruta">
+        <button>Adicionar</button>
+    </form>
+</body>
+~~~
