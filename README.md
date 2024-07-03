@@ -176,3 +176,20 @@ Estes blocos são para herdar toda a página html, servindo para economizar cód
 </form>
 {% endblock conteudo %}
 ~~~
+
+## Rotas dinâmicas
+Rotas dinâmicas são usadas para economizar linhas de código e páginas.
+~~~python
+@app.route('/filmes/<props>') # props é a variável a ser mudada
+def filmes(props):
+  if props == 'populares': # Definindo possível props
+        url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3ddc9b92db4de6c6559569c67bd88a13"
+~~~
+
+E no html, o que deve ser feito é a definição dos props
+
+~~~~html
+<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <li><a class="dropdown-item" href="{{url_for('filmes', props='populares')}}">Mais Populares</a></li>
+</ul>
+~~~
