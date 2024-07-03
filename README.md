@@ -188,8 +188,60 @@ def filmes(props):
 
 E no html, o que deve ser feito é a definição dos props
 
-~~~~html
+~~~html
 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
   <li><a class="dropdown-item" href="{{url_for('filmes', props='populares')}}">Mais Populares</a></li>
 </ul>
+~~~
+
+## Redirecionar para páginas
+O flask tem uma função para, assim que acontecer algo específico, o usuário seja redirecionado para uma página específica. A função `redirect()` e `url_for()` devem ser importadas no início do código e também devem ser utilizadas em conjunto para o redirecionamento.
+~~~python
+@app.route('/cria_curso', methods=["GET", "POST"])
+def cria_curso():
+    nome = request.form.get('nome')
+    descricao = request.form.get('descricao')
+    ch = request.form.get('ch')
+    if request.method == "POST":
+        curso = cursos(nome, descricao, ch)
+        db.session.add(curso)
+        db.session.commit()
+        return redirect(url_for('lista_cursos')) # Assim que o método POST for concluído, o usuário será direcionado para a página lista_cursos()
+    return render_template("cria_curso.html")
+~~~
+
+## Validação de dados
+Se o usuário não possuir JavaScript ativado na sua máquina, pode-se possuir alguns problemas, sendo um deles o `required` do form html, então usa-se uma verificação no próprio servidor python utilizando o `flash`, que deve ser importado no início do código.
+
+Deve-se também criar uma `secret_key` utilizando o comando a seguir no terminal:
+```
+python -c 'import os; print(os.urandom(16))
+```
+
+~~~python
+app.secret_key = "b'\x1aY\x87.N\x94Q\xa1~\xc1\x0c\x83hayq'" # Deve-se criar uma secret key 
+
+# RESTO DO CÓDIGO#
+
+@app.route('/cria_curso', methods=["GET", "POST"])
+def cria_curso():
+    nome = request.form.get('nome')
+    descricao = request.form.get('descricao')
+    ch = request.form.get('ch')
+    if request.method == "POST":
+        if not nome or not descricao or not ch:
+            flash("Preencha todos os campos", "error") # O que vai aparecer e o tipo, neste caso um erro
+        else:
+            curso = cursos(nome, descricao, ch)
+            db.session.add(curso)
+            db.session.commit()
+            return redirect(url_for('lista_cursos'))
+    return render_template("cria_curso.html")
+~~~
+~~~html
+{% for mensagem in get_flashed_messages() %}
+    <div class="alert alert-danger">
+        {{mensagem}}
+    </div>
+{% endfor %}
 ~~~
